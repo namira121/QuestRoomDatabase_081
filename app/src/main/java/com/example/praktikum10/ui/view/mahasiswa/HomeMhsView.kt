@@ -13,6 +13,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -25,6 +26,7 @@ import com.example.praktikum10.ui.customwidget.TopAppBar
 import com.example.praktikum10.ui.viewmodel.HomeMhsViewModel
 import com.example.praktikum10.ui.viewmodel.HomeUIState
 import com.example.praktikum10.ui.viewmodel.PenyediaViewModel
+import kotlinx.coroutines.launch
 
 @Composable
 fun HomeMhsView(
@@ -84,6 +86,14 @@ fun BodyHomeMhsView(
               CircularProgressIndicator()
             }
         }
-
+        homeUIState.isError -> {
+            LaunchedEffect(homeUIState.errorMessage) {
+                homeUIState.errorMessage?.let {message ->
+                    coroutineScope.launch {
+                        snackbarHostState.showSnackbar(message)
+                    }
+                }
+            }
+        }
     }
 }
