@@ -8,6 +8,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -43,5 +45,15 @@ fun HomeMhsView(
                 )
             }
         }
-    ) {}
+    ) {innerPadding ->
+        val homeUIState by viewModel.homeUIState.collectAsState()
+
+        BodyHomeMhsView(
+            homeUIState = homeUIState,
+            onClick = {
+                onDetailClick(it)
+            },
+            modifier = Modifier.padding(innerPadding)
+        )
+    }
 }
