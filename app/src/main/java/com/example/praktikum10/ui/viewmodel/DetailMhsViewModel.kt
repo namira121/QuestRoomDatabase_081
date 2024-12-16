@@ -9,5 +9,5 @@ class DetailMhsViewModel(
     savedStateHandle: SavedStateHandle,
     private val repositoryMhs: RepositoryMhs,
 ):ViewModel(){
-
+    private val _nim: String = checkNotNull(savedStateHandle[DestinasiDetail.NIM])
 }
