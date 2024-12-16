@@ -40,6 +40,8 @@ class UpdateMhsViewModel(
         val event = updateUIState.mahasiswaEvent
         val errorState = FormErrorState(
             nim = if (event.nim.isNotEmpty()) null else "NIM tidak boleh kosong",
+            nama = if (event.nama.isNotEmpty()) null else "Nama tidak boleh kosong",
+            jenisKelamin = if (event.jenisKelamin.isNotEmpty()) null else "Jenis Kelamin tidak boleh kosong",
         )
     }
 }
