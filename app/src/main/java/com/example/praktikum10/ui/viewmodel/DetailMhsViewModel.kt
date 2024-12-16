@@ -51,3 +51,8 @@ class DetailMhsViewModel(
         }
     }
 }
+
+data class DetailUIState(
+    val detailUiEvent: MahasiswaEvent = MahasiswaEvent(),
+    val isLoading: Boolean = false
+)
