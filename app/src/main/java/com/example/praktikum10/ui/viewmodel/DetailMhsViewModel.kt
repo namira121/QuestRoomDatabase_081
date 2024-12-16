@@ -54,5 +54,7 @@ class DetailMhsViewModel(
 
 data class DetailUIState(
     val detailUiEvent: MahasiswaEvent = MahasiswaEvent(),
-    val isLoading: Boolean = false
+    val isLoading: Boolean = false,
+    val isError: Boolean = false,
+    val errorMessage: String = ""
 )
