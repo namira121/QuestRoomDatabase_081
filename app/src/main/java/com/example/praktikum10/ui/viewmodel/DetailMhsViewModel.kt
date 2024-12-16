@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
 class DetailMhsViewModel(
     savedStateHandle: SavedStateHandle,
@@ -42,4 +43,11 @@ class DetailMhsViewModel(
                 isLoading = true,
             )
         )
+    fun deleteMhs(){
+        detailUIState.value.detailUiEvent.toMahasiswaEntity().let{
+            viewModelScope.launch {
+                repositoryMhs.deleteMhs(it)
+            }
+        }
+    }
 }
