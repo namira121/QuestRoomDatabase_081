@@ -43,6 +43,7 @@ class UpdateMhsViewModel(
             nama = if (event.nama.isNotEmpty()) null else "Nama tidak boleh kosong",
             jenisKelamin = if (event.jenisKelamin.isNotEmpty()) null else "Jenis Kelamin tidak boleh kosong",
             alamat = if (event.alamat.isNotEmpty()) null else "Alamat Kelamin tidak boleh kosong",
+            kelas = if (event.kelas.isNotEmpty()) null else "Kelas Kelamin tidak boleh kosong",
         )
     }
 }
