@@ -11,7 +11,7 @@ data class HomeUIState(
     val listMhs: List<Mahasiswa> = listOf(),
     val isLoading: Boolean = false,
     val isError: Boolean = false,
-    val
+    val errorMessage: String = ""
 )
 class HomeMhsViewModel(
     private val repositoryMhs: RepositoryMhs
@@ -20,7 +20,9 @@ class HomeMhsViewModel(
         .filterNotNull()
         .map {
             HomeUIState(
-                listMhs
+                listMhs = it.toList(),
+                isLoading = false,
             )
         }
+
 }
