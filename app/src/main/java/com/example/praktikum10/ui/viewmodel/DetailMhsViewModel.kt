@@ -23,7 +23,7 @@ class DetailMhsViewModel(
         .filterNotNull()
         .map {
             DetailUIState(
-                detailUIState = it.toDetailUiEvent(),
+                detailUiEvent = it.toDetailUiEvent(),
                 isLoading = false,
             )
         }
@@ -39,7 +39,7 @@ class DetailMhsViewModel(
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(2000),
-            initialValue = DatailUIState(
+            initialValue = DetailUIState(
                 isLoading = true,
             )
         )
@@ -57,4 +57,10 @@ data class DetailUIState(
     val isLoading: Boolean = false,
     val isError: Boolean = false,
     val errorMessage: String = ""
-)
+){
+    val isUiEventEmpty: Boolean
+        get() = detailUiEvent == MahasiswaEvent()
+
+    val isUiEventNotEmpty: Boolean
+        get() = detailUiEvent != MahasiswaEvent()
+}
