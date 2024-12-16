@@ -110,5 +110,18 @@ fun BodyHomeMhsView(
                 )
             }
         }
+
+        else -> {
+            ListMahasiswa(
+                listMhs = homeUIState.listMhs,
+                onClick = {
+                    onClick(it)
+                    println(
+                        it
+                    )
+                },
+                modifier = modifier
+            )
+        }
     }
 }
