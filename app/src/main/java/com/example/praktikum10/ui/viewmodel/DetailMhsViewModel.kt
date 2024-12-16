@@ -6,6 +6,7 @@ import com.example.praktikum10.repository.RepositoryMhs
 import com.example.praktikum10.ui.navigation.DestinasiDetail
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.filterNotNull
+import kotlinx.coroutines.flow.map
 
 class DetailMhsViewModel(
     savedStateHandle: SavedStateHandle,
@@ -15,4 +16,10 @@ class DetailMhsViewModel(
 
     val detailUIState: StateFlow<DetailUIState> = repositoryMhs.getMhs(_nim)
         .filterNotNull()
+        .map {
+            DetailUIState(
+                detailUIState = it.toDetailUiEvent(),
+                isLoading = false,
+            )
+        }
 }
