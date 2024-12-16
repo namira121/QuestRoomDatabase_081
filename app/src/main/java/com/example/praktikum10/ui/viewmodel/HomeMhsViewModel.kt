@@ -11,7 +11,7 @@ data class HomeUIState(
     val listMhs: List<Mahasiswa> = listOf(),
     val isLoading: Boolean = false,
     val isError: Boolean = false,
-
+    val
 )
 class HomeMhsViewModel(
     private val repositoryMhs: RepositoryMhs
