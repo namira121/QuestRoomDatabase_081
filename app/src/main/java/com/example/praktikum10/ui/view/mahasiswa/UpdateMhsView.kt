@@ -13,5 +13,5 @@ fun UpdateMhsView(
     modifier: Modifier = Modifier,
     viewModel: UpdateMhsViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ){
-
+    val uiState = viewModel.updateUIState
 }
