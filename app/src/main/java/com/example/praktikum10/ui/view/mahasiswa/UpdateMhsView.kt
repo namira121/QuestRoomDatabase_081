@@ -18,6 +18,7 @@ import com.example.praktikum10.ui.customwidget.TopAppBar
 import com.example.praktikum10.ui.viewmodel.PenyediaViewModel
 import com.example.praktikum10.ui.viewmodel.UpdateMhsViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -54,6 +55,7 @@ fun UpdateMhsView(
             TopAppBar(
                 judul = "Edit Mahasiswa",
                 showBackButton = true,
+                modifier = modifier,
                 onBack = onBack,
             )
         }
@@ -67,7 +69,7 @@ fun UpdateMhsView(
             InsertBodyMhs(
                 uiState = uiState,
                 onValueChange = { updatedEvent ->
-                    viewModel.updateState(updatedEvent)
+                    viewModel.UpdateState(updatedEvent)
                 },
                 onClick = {
                     coroutineScope.launch {
