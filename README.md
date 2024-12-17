@@ -1,0 +1,5 @@
+![insertmhs](https://github.com/user-attachments/assets/a739662e-7ea4-4a15-be64-7866e2f3e899)
+![daftarmhs](https://github.com/user-attachments/assets/bd240090-f9a6-4490-8845-3904a0c3c1a8)
+![detailmhs](https://github.com/user-attachments/assets/389f92aa-34ef-4e4d-8bf8-e32701936eea)
+![deletemhs](https://github.com/user-attachments/assets/6ce333ce-4acf-47ef-9785-d755c5fbea04)
+![hasildelete](https://github.com/user-attachments/assets/a07cecbf-7fba-4135-9bf3-65296bd48d68)
