@@ -168,3 +168,11 @@ fun ItemDetailMhs(
         }
     }
 }
+@Composable
+fun ComponentDetailMhs(
+    modifier: Modifier = Modifier,
+    judul: String,
+    isinya: String,
+){
+
+}
