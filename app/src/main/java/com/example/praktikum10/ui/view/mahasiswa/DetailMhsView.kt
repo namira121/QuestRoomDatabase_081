@@ -9,12 +9,14 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.room.Delete
 import com.example.praktikum10.ui.customwidget.TopAppBar
 import com.example.praktikum10.ui.viewmodel.DetailMhsViewModel
+import com.example.praktikum10.ui.viewmodel.DetailUIState
 import com.example.praktikum10.ui.viewmodel.PenyediaViewModel
 
 @Composable
@@ -58,4 +60,13 @@ fun DetailMhsView(
             }
         )
     }
+}
+
+@Composable
+fun BodyDetailMhs(
+    modifier: Modifier = Modifier,
+    detailUIState: DetailUIState = DetailUIState(),
+    onDeleteClick: () -> Unit = { }
+){
+
 }
