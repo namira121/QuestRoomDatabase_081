@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -26,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.room.Delete
+import com.example.praktikum10.data.entity.Mahasiswa
 import com.example.praktikum10.ui.customwidget.TopAppBar
 import com.example.praktikum10.ui.viewmodel.DetailMhsViewModel
 import com.example.praktikum10.ui.viewmodel.DetailUIState
@@ -134,4 +136,14 @@ fun BodyDetailMhs(
             }
         }
     }
+}
+
+@Composable
+fun ItemDetailMhs(
+    modifier: Modifier = Modifier,
+    mahasiswa: Mahasiswa
+){
+    Card(
+        modifier
+    ) {  }
 }
