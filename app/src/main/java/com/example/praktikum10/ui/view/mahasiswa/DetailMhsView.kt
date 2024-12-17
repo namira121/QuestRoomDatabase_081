@@ -19,6 +19,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -126,7 +127,7 @@ fun BodyDetailMhs(
                             deleteConfirmationRequired = false
                             onDeleteClick()
                         },
-                        onDeleteClick = {deleteConfirmationRequired =false},
+                        onDeleteCancel = {deleteConfirmationRequired =false},
                         modifier = Modifier.padding(8.dp)
                     )
                 }
@@ -202,5 +203,17 @@ private fun DeleteConfirmationDialog(
     modifier: Modifier = Modifier
 ){
     AlertDialog(onDismissRequest = { },
-        title = { Text("DeleteData") })
+        title = { Text("Delete Data") },
+        text = { Text("Apakah anda yakin ingin menghapus data?") },
+        modifier = modifier,
+        dismissButton = {
+            TextButton(onClick = onDeleteCancel) {
+                Text(text = "Cancel")
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = onDeleteConfirm) {
+                Text(text = "Yes")
+            }
+        })
 }
